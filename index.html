@@ -5,44 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>oeoam ✦ ɢʟᴏᴇᴏᴀᴍ</title>
     <style>
-        /* 這裡定義妳網頁的視覺規則 */
         body {
-            background-color: #121212; /* 幽暗的背景 */
-            color: #a0a0a0; /* 清冷的灰色文字 */
+            background-color: #121212; /* 背景色：幽暗 */
+            color: #d1d1d1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            font-family: 'Inter', 'Helvetica Neue', sans-serif;
-            letter-spacing: 0.15em;
+            font-family: 'Inter', 'Noto Sans TC', sans-serif;
+            letter-spacing: 0.12em;
+        }
+
+        /* 標題區塊 */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         h1 {
             font-weight: 200;
-            font-size: 1.5rem;
-            color: #e0e0e0;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin: 0;
         }
 
-        .status {
+        .subtitle {
+            font-size: 0.75rem;
+            opacity: 0.5;
+            margin-top: 10px;
+        }
+
+        /* 按鈕容器 */
+        .links-container {
+            width: 100%;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* 按鈕樣式：極簡框線感 */
+        .link-card {
+            display: block;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #d1d1d1;
+            border: 1px solid #333;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* 滑鼠懸停效果：微光感 */
+        .link-card:hover {
+            border-color: #888;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* 商務資訊區塊 */
+        .contact-info {
+            margin-top: 50px;
+            text-align: center;
             font-size: 0.8rem;
-            opacity: 0.6;
+            border-top: 1px solid #222;
+            padding-top: 30px;
+            width: 200px;
         }
 
-        /* 簡單的裝飾線，增加收納感 */
-        .line {
-            width: 30px;
-            height: 1px;
-            background-color: #404040;
-            margin: 20px 0;
+        .contact-item {
+            margin-bottom: 10px;
+            opacity: 0.7;
         }
     </style>
 </head>
 <body>
-    <h1>ɢʟᴏᴇᴏᴀᴍ</h1>
-    <div class="line"></div>
-    <div class="status">正在收納墨跡中...</div>
+
+    <div class="header">
+        <h1>ɢʟᴏᴇᴏᴀᴍ</h1>
+        <div class="subtitle">淨｜Kiyo ✦ 創作收納</div>
+    </div>
+
+    <div class="links-container">
+        <a href="https://twitter.com/kiyo_ink" class="link-card" target="_blank">X (Twitter) ｜ 商務與主帳</a>
+        
+        <a href="https://twitter.com/oeoam" class="link-card" target="_blank">X (Sub) ｜ 靈魂碎片</a>
+		<a href="https://www.instagram.com/_oeoam" class="link-card" target="_blank">Instagram ｜ 作品精選</a>
+        <a href="https://www.twitch.tv/oeoam" class="link-card" target="_blank">Twitch ｜ 實況內容</a>
+		<a href="https://www.youtube.com/@oeoam" class="link-card" target="_blank">YouTube ｜ 實況存檔</a>
+    </div>
+
+    <div class="contact-info">
+        <div class="contact-item">委託洽談 / Business</div>
+        <div class="contact-item" style="color: #ffffff;">ruitcase@gmail.com</div>
+        <div class="subtitle" style="margin-top: 20px;">© oeoam</div>
+    </div>
+
 </body>
 </html>
