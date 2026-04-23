@@ -5,79 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>oeoam ✦ ɢʟᴏᴇᴏᴀᴍ</title>
     <style>
+        :root {
+            --bg-dark: #121212;
+            --accent-glow: #ffffff;
+            --text-main: #d1d1d1;
+            --text-dim: #666666;
+            --border-color: #333333;
+        }
+
         body {
-            background-color: #121212;
-            color: #d1d1d1;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            padding: 60px 20px; /* 增加上下留白 */
             font-family: 'Inter', 'Noto Sans TC', sans-serif;
             letter-spacing: 0.12em;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+        /* 標題區塊 */
+        .header { text-align: center; margin-bottom: 40px; }
+        h1 { font-weight: 200; font-size: 1.8rem; color: var(--text-main); margin: 0; text-transform: uppercase; }
+        .subtitle { font-size: 0.75rem; opacity: 0.5; margin-top: 10px; }
 
-        h1 {
-            font-weight: 200;
-            font-size: 1.8rem;
-            color: #ffffff;
-            margin: 0;
-            text-transform: uppercase; /* 確保全大寫視覺統一 */
-        }
-
-        .subtitle {
-            font-size: 0.75rem;
-            opacity: 0.5;
-            margin-top: 10px;
-        }
-
-        .links-container {
-            width: 100%;
-            max-width: 300px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px; /* 稍微縮小間距，視覺更緊湊 */
-        }
-
+        /* 連結區塊 */
+        .links-container { width: 100%; max-width: 320px; display: flex; flex-direction: column; gap: 12px; margin-bottom: 60px; }
         .link-card {
-            display: block;
-            padding: 14px;
-            text-align: center;
-            text-decoration: none;
-            color: #d1d1d1;
-            border: 1px solid #333;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            transition: all 0.3s ease;
-            background-color: rgba(255, 255, 255, 0.02);
+            display: block; padding: 14px; text-align: center; text-decoration: none;
+            color: var(--text-main); border: 1px solid var(--border-color); border-radius: 4px;
+            font-size: 0.85rem; transition: all 0.3s ease; background-color: rgba(255, 255, 255, 0.02);
+        }
+        .link-card:hover { border-color: #888; background-color: rgba(255, 255, 255, 0.05); color: var(--accent-glow); transform: translateY(-2px); }
+
+        /* 作品集畫廊區塊 */
+        .portfolio-title { font-size: 0.9rem; margin-bottom: 20px; opacity: 0.8; }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 80px;
+        }
+        .work-item {
+            aspect-ratio: 1 / 1;
+            background-color: #1a1a1a;
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+            display: flex; justify-content: center; align-items: center;
+            color: var(--text-dim); font-size: 0.7rem;
         }
 
-        .link-card:hover {
-            border-color: #888;
-            background-color: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
-            transform: translateY(-2px);
+        /* 聯絡表單區塊 */
+        .contact-section { width: 100%; max-width: 320px; text-align: center; }
+        .contact-section h2 { font-weight:200 ; font-size: 0.9rem; margin-bottom: 20px; }
+        
+        input, textarea {
+            width: 100%; box-sizing: border-box; background: transparent;
+            border: 1px solid var(--border-color); color: var(--text-main);
+            padding: 12px; margin-bottom: 12px; font-family: inherit; font-size: 0.85rem;
         }
+        textarea { height: 100px; resize: none; }
+        input:focus, textarea:focus { outline: none; border-color: #666; }
 
-        .contact-info {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 0.75rem;
-            border-top: 1px solid #222;
-            padding-top: 30px;
-            width: 220px; /* 稍微加寬，避免信箱折行 */
+        button {
+            width: 100%; background: var(--text-main); color: var(--bg-dark);
+            border: none; padding: 12px; cursor: pointer; letter-spacing: 0.2em; transition: 0.3s;
         }
+        button:hover { background: var(--accent-glow); }
 
-        .contact-item {
-            margin-bottom: 8px;
-            opacity: 0.7;
-        }
+        footer { margin-top: 60px; font-size: 0.7rem; opacity: 0.3; }
     </style>
 </head>
 <body>
@@ -95,11 +95,23 @@
         <a href="https://www.youtube.com/@oeoam" class="link-card" target="_blank">YouTube ｜ 實況存檔</a>
     </div>
 
-    <div class="contact-info">
-        <div class="contact-item">委託洽談 / Business</div>
-        <div class="contact-item" style="color: #ffffff; letter-spacing: 0.05em;">ruitcase@gmail.com</div>
-        <div class="subtitle" style="margin-top: 20px; opacity: 0.3;">© oeoam</div>
+    <div class="portfolio-title">SELECTED WORKS</div>
+    <div class="portfolio-grid">
+        <div class="work-item">IMAGE_STORAGE_01</div>
+        <div class="work-item">IMAGE_STORAGE_02</div>
+        <div class="work-item">IMAGE_STORAGE_03</div>
     </div>
+
+    <section class="contact-section">
+        <h2>委託洽談 / BUSINESS</h2>
+        <form action="https://formspree.io/f/mkokkqnj" method="POST">
+            <input type="email" name="email" placeholder="您的電子信箱" required>
+            <textarea name="message" placeholder="委託內容或想說的話..." required></textarea>
+            <button type="submit">發送訊息</button>
+        </form>
+    </section>
+
+    <footer>© oeoam</footer>
 
 </body>
 </html>
